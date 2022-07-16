@@ -15,7 +15,7 @@ Use this at your own peril.
 
 ## Dependencies
 
- * pwntools
- * 
+ * jinja2
+ * r2pipe
 
 ## Future work
