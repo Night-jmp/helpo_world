@@ -9,6 +9,16 @@ def print_help():
     subprocess.call("man gcc", shell=True)
 
 def getopts():
+    try:
+        fd = open("user_options", "r")
+        lines = fd.read().split("\n")
+        x = set(lines)
+        if len(x) == 1:
+            print("Using recent compiler options")
+            return x[0]
+    except:
+        pass
+
     opts = []
     print("Add -c? (y/n/h)")
     opt = input("> ")
@@ -42,5 +52,12 @@ def getopts():
         opts.append(f"-O{lvl}")
     elif opt == "h":
         print_help()
+
+    fd = open("user_options", "a")
+    
+    for x in opts:
+        fd.write(x + ",")
+    fd.write("\n")
+    fd.close()
 
     return opts
