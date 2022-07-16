@@ -12,6 +12,8 @@ def menu():
     print("3.) Disassemble")
     print("4.) Debug")
     print("5.) Hexdump")
+    print("6.) Run")
+    print("7.) Big Data")
     print("0.) Exit")
     opt = input("> ")
     print("\n")
@@ -32,6 +34,8 @@ def menu():
     elif opt == "5":
         subprocess.run(["/usr/bin/xxd", "hello"])
     elif opt == "6":
+        subprocess.run(["./hello"])
+    elif opt == "7":
         factory = bigdata.bigDataHandlerFactory(bigDataVersion=1)
         handler = factory.generateDataHandler()
         handler.displayData()
