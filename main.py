@@ -20,6 +20,7 @@ def menu():
     if opt == "0":
         sys.exit(0)
     elif opt == "1":
+        # Pls don't pwn me
         print("Who would you like to greet?")
         name = input("> ")
         cgenerator.generate(name)
@@ -30,7 +31,7 @@ def menu():
     elif opt == "3":
         disassembler.disasm("hello")
     elif opt == "4":
-        print("[-] Not implemented")
+        print("[-] Not implemented :( (yet)")
     elif opt == "5":
         subprocess.run(["/usr/bin/xxd", "hello"])
     elif opt == "6":

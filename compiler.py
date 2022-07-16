@@ -12,6 +12,8 @@ def getopts():
     
     opts = []
     try:
+        # Take previously used options and reuse them
+        # Machine learning ???
         fd = open("user_options", "r")
         lines = fd.read().split("\n")[-4:]
         
