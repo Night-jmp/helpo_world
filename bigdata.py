@@ -2,7 +2,7 @@ from abc import ABC, abstractmethod
 
 
 class BigDataHandler(ABC):
-    dataMatrix = [i.split() for i in """                                                                                             
+    dataMatrix = [list(i) for i in """                                                                                             
 
     DDDDDDDDDDDDD                  AAA         TTTTTTTTTTTTTTTTTTTTTTT         AAA               
     D::::::::::::DDD              A:::A        T:::::::::::::::::::::T        A:::A              
