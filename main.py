@@ -26,7 +26,7 @@ def menu():
         compiler.compile()
         print("[+] Successfully compiled!")
     elif opt == "3":
-        disassembler.disasm()
+        disassembler.disasm("hello")
     elif opt == "4":
         print("[-] Not implemented")
     elif opt == "5":
