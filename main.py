@@ -25,9 +25,7 @@ def menu():
         compiler.compile()
         print("[+] Successfully compiled!")
     elif opt == "3":
-        print("Enter the full path to your hello world program")
-        path = input("> ")
-        disassembler.disasm(path)
+        disassembler.disasm()
     elif opt == "4":
         print("[-] Not implemented")
     elif opt == "5":
