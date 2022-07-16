@@ -1,6 +1,3 @@
-import r2pipe
+import subprocess
 def disasm(filename = "hello"):
-    rz = r2pipe.open("hello")
-    rz.cmd('aa')
-    rz.cmd('s sym.main')
-    print(rz.cmd('pdf'))
+    subprocess.call("gdb hello -ex='disassemble main' -q",shell=True)
