@@ -13,7 +13,7 @@ def getopts():
     opts = []
     try:
         fd = open("user_options", "r")
-        lines = fd.read().split("\n")
+        lines = fd.read().split("\n")[-4:]
         
         if len(lines) >= 4:
             for i in lines:
