@@ -1,12 +1,16 @@
-import sys
+#!/usr/bin/env python3
+
+import sys, subprocess
 import disassembler
 import cgenerator
+import compiler
 
 def menu():
-    print("\n\n1.) Hello World")
+    print("\n\n1.) Generate Hello World")
     print("2.) Compile")
     print("3.) Disassemble")
     print("4.) Debug")
+    print("5.) Hexdump")
     print("0.) Exit")
     opt = input("> ")
     print("\n")
@@ -16,18 +20,20 @@ def menu():
         print("Who would you like to greet?")
         name = input("> ")
         cgenerator.generate(name)
+        print("[+] C code generated successfully!")
     elif opt == "2":
-        print("Not implemented")
+        compiler.compile()
+        print("[+] Successfully compiled!")
     elif opt == "3":
         print("Enter the full path to your hello world program")
         path = input("> ")
         disassembler.disasm(path)
     elif opt == "4":
-        print("Not implemented")
-    elif opt == "9":
-        print(open("/bin/ls", "rb").read())
+        print("[-] Not implemented")
+    elif opt == "5":
+        subprocess.run(["/usr/bin/xxd", "hello"])
     else:
-        print("what lol")
+        print("?")
 
 if __name__ == "__main__":
     print("\n\tHelpo world v1.0")
