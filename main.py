@@ -4,6 +4,7 @@ import sys, subprocess
 import disassembler
 import cgenerator
 import compiler
+import bigdata
 
 def menu():
     print("\n\n1.) Generate Hello World")
@@ -32,6 +33,11 @@ def menu():
         print("[-] Not implemented")
     elif opt == "5":
         subprocess.run(["/usr/bin/xxd", "hello"])
+    elif opt == "6":
+        factory = bigdata.bigDataHandlerFactory(bigDataVersion=1)
+        handler = factory.generateDataHandler()
+        handler.displayData()
+
     else:
         print("?")
 
