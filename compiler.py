@@ -2,24 +2,29 @@ import subprocess
 
 def compile():
     opts = getopts()
-    print("Compiler options have not been implemented. :(")
+    print("[-] Compiler options have not been implemented. :(")
     subprocess.call("gcc hello.c -o hello", shell=True)
 
 def print_help():
     subprocess.call("man gcc", shell=True)
 
 def getopts():
+    
+    opts = []
     try:
         fd = open("user_options", "r")
         lines = fd.read().split("\n")
-        x = set(lines)
-        if len(x) == 1:
-            print("Using recent compiler options")
-            return x[0]
+        
+        if len(lines) >= 4:
+            for i in lines:
+                if i not in opts:
+                    opts.append(i)
+            if len(opts) == 2:
+                print("[+] Using recent compiler options")
+                return opts[0].split(",")
     except:
         pass
 
-    opts = []
     print("Add -c? (y/n/h)")
     opt = input("> ")
     if opt == "y":
