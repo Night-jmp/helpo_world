@@ -8,5 +8,7 @@ def generate(greet):
     env = Environment(loader = TemplateLoader)
     template = env.get_template("hello.template")
     fd = open("hello.c", "w")
-    fd.write(template.render(name = greet))
+    program = template.render(name = greet) 
+    print(program)
+    fd.write(program)
     fd.close()
