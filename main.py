@@ -23,7 +23,10 @@ def menu():
         # Pls don't pwn me
         print("Who would you like to greet?")
         name = input("> ")
-        cgenerator.generate(name)
+        factory = cgenerator.cgeneratorHandlerFactory(cgeneratorVersion=1)
+        handler = factory.generateCgeneratorHandler()
+        handler.generate(name)
+        #cgenerator.generate(name)
         print("[+] C code generated successfully!")
     elif opt == "2":
         compiler.compile()

@@ -17,7 +17,7 @@ class DisassemblerHandler(ABC):
 
 class DisassemblerHandlerV1(DisassemblerHandler):
 
-    def disasm(filename="hello"):
+    def disasm(self, filename="hello"):
         subprocess.call("gdb hello -ex='disassemble main' -q -ex='q' ", shell=True)
 
 
