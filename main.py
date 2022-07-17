@@ -29,7 +29,9 @@ def menu():
         compiler.compile()
         print("[+] Successfully compiled!")
     elif opt == "3":
-        disassembler.disasm("hello")
+        factory = disassembler.disassemblerHandlerFactory(disasmVersion=1)
+        handler = factory.generateDisasmHandler()
+        handler.disasm()
     elif opt == "4":
         print("[-] Not implemented :( (yet)")
     elif opt == "5":
